@@ -47,7 +47,24 @@ const MegaMenu = () => {
                         </li>
                     </ul>
                 </li>
-                <li>Contact</li>
+                <li className='submenu-4'>Contact
+                    <ul className='sublevel-4'>
+                        <li className='mega-submenu-4'>level-4
+                            <ul className='level-4'>
+                                <li>
+                                    <img src={img1} alt='Sample 1' />
+                                    <p>test level</p>
+                                </li>
+                                <li><img src={img1} alt='Sample 1' />
+                                    <p>test level</p></li>
+
+                            </ul>
+                        </li>
+                        <li>level-4</li>
+                        <li>level-4</li>
+                        <li>level-4</li>
+                    </ul>
+                </li>
                 <li>Blogs</li>
                 <li>Channels</li>
             </ul>
