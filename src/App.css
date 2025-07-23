@@ -12,6 +12,7 @@ ul li{
   align-items: center;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .level1 {
@@ -21,7 +22,7 @@ ul li{
 }
 
 .level1 > li {
-  position: relative;
+
   padding: 10px;
   cursor: pointer;
 }
@@ -32,15 +33,26 @@ ul li{
   left: 0;
   list-style: none;
   background-color: #fff;
-  display: none;
   box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
   padding: 10px;
-  min-width: 600px;
-  
+  width: 100vw;
+  display: flex;
+  justify-content: center;  /* 👈 Center items horizontally */
+  align-items: center;      /* 👈 Optional: center items vertically */
+  padding: 20px;        
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .has-submenu:hover .level2 {
-  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+ 
 
 }
 .level2 li{
@@ -59,12 +71,21 @@ ul li{
  list-style: none;
   background-color: #fff;
   top: 100%;
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
  
  
 }
 
 .submenu-2:hover .sublevel2{
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .sublevel2 li{
@@ -72,31 +93,62 @@ ul li{
 }
 
 .level3-1,.level3-2,.level3-3{
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   left: 10%;
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .has-submenu2-1:hover .level3-1{
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 .has-submenu2-2:hover .level3-2{
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 .has-submenu2-3:hover .level3-3{
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
-.sublevel-4,.level-4{
-  display: none;
+.sublevel-4{
+  display: block;
   position: absolute;
   padding: 20px;
   min-width: 500px;
+  transform: translateY(30px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.level-4{
+  display: flex;
+  position: absolute;
+  padding: 20px;
+  min-width: 500px;
+  transform: translateY(30px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .submenu-4:hover .sublevel-4{
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
   position: absolute;
   left: 10%;
 }
@@ -106,7 +158,10 @@ ul li{
 }
 
 .mega-submenu-4:hover .level-4{
-  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
   top: 0;
   left: 10%;
 }
